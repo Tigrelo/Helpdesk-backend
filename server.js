@@ -1,10 +1,10 @@
 
-
 // 1. Carrega as variáveis de ambiente
 require('dotenv').config();
 
 const express = require('express');
 const connectDB = require('./config/db'); 
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 // 4. Conexão com o Banco de Dados 
 connectDB(); 
-
+app.use('/api/auth', authRoutes);
 
 // 5. Definição da porta
 const PORT = process.env.PORT || 8080;

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Função assíncrona para conectar ao DB
 const connectDB = async () => {
     try {
-        // Obter a URI de conexão do seu arquivo .env
+        // Obter a URI de conexão do arquivo .env
         const conn = await mongoose.connect(process.env.MONGO_URI);
 
         console.log(`📡 MongoDB conectado: ${conn.connection.host}`);
